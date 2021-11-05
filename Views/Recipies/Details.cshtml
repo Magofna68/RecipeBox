@@ -1,0 +1,39 @@
+@{
+  Layout = "_Layout";
+}
+
+@model RecipeBox.Models.Recipe
+
+<h2>Recipe Details:</h2>
+<h4>
+  <strong>@Html.DisplayNameFor(model=>model.Name):</strong> @Html.DisplayFor(model=>model.Name)<br><br>
+  <strong>@Html.DisplayNameFor(model=>model.Rating):</strong> @Html.DisplayFor(model=>model.Rating)<br><br>
+  <strong>@Html.DisplayNameFor(model=>model.Ingredients):</strong>
+  @Html.DisplayFor(model=>model.Ingredients)<br><br>
+  <strong>@Html.DisplayNameFor(model=>model.Instructions):</strong> @Html.DisplayFor(model=>model.Instructions)
+</h4>
+<br>
+@if (@Model.JoinEntities.Count == 0)
+{
+  <p>This recipe does not belong to any categories</p>
+}
+else
+{
+  <h4>Categories the recipe belongs to:</h4>
+  <ul>
+  @foreach (var join in Model.JoinEntities)
+    {
+      <li>@join.Category.Tag</li>
+      @using (Html.BeginForm("DeleteCategory", "Recipies"))
+      {
+        @Html.Hidden("joinId", @join.CategoryRecipeId)
+        <input type="submit" value="Delete" />
+      }
+    }
+  </ul>
+}
+
+<p>@Html.ActionLink("Add a Category", "AddCategory", new { id = Model.RecipeId })</p>
+<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Edit Item", "Edit", new { id = Model.RecipeId })</p>@*//feel like this should be 'CategoryId'*@
+<p>@Html.ActionLink("Delete Item", "Delete", new { id = Model.RecipeId })</p>

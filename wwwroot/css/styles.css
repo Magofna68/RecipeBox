@@ -1,0 +1,83 @@
+h1 {
+  color: white;
+  text-align: center;
+  margin: 0 0 5% 0;
+}
+
+h2 {
+  margin: 0 0 5% 0;
+}
+
+body {
+  background-image: url("../img/Recipeeeeee.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%vh;
+  font-size: 2.5em;
+  background-position: center;
+  display: cover;
+  /* margin-top: auto;
+  margin-left: auto;
+  align-items: center;
+  align-content: center;
+  justify-content: center; */
+  /* opacity: 0.1; */
+}
+
+.container {
+  background-position: center;
+  margin-top: auto;
+  padding-top: auto;
+  /* background-image: url("../img/Recipeeeeee.jpeg"); */
+  background-image: url("https://images.creativemarket.com/0.1.0/ps/3447115/1360/906/m1/fpnw/wm1/xiici1rx6kacd5vpnbpogkmsfz7drs2ofrodje5xseh6dftu7nwcu2sp3forjdes-.jpg?1508605603&s=f7f8c7a0d40b8b11ca8a6bf994c042e7");
+  background-blend-mode: rgb(12, 245, 101);
+  background-size: cover;
+  display: cover;
+  margin-top: 5%;
+  margin-left: auto;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-radius: 5%;
+  opacity: 1.2;
+  border: solid 3px;
+  padding: 0px 10px;
+  color: white;
+}
+
+/* a {
+  color: black;
+} */
+
+#footer {
+  /* color: #c37d92; */
+  font-size: small;
+  color: rgb(165, 165, 165);
+  font-weight: bold;
+}
+
+#header {
+  font-size: small;
+  color: rgb(165, 165, 165);
+  margin-top: 2%;
+}
+#action {
+  text-align: center;
+  color: white;
+  /* background: red; */
+}
+
+/* li {
+  align-items: center;
+  justify-content: center;
+  margin: 0% 0 0% 0;
+} */
+
+a {
+  color: white;
+  background-color: rgb(82, 79, 79);
+  padding: 0px 15px 0 15px;
+  border: solid gray 2px;
+  border-radius: 15px;
+  margin: 0px 0 0px 0;
+}

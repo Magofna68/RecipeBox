@@ -1,0 +1,60 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>The Recipe Box</h1>
+
+@using RecipeBox.Models
+
+<main class="row">
+  <div class="col-sm-6 text-center">
+    <h2>Categories:</h2>
+    @if (@Model["categories"].Count == 0)
+    {
+      @Html.ActionLink("Add a new category", "Create", "Categories")
+    }
+    else
+    {
+      <ul>
+        @foreach (Category category in @Model["categories"])
+        {
+          @Html.ActionLink($"{category.Tag}", "Details", "Categories", new {id = category.CategoryId})
+          <br>
+        }
+      </ul>
+    }
+  </div>
+
+  <div class="col-sm-6 text-center">
+    <h2>Recipes:</h2>
+    @if (@Model["recipes"].Count == 0)
+    {
+      @Html.ActionLink("Add a new recipe", "Create", "Recipies")
+    }
+    else
+    {
+      <ul>
+        @foreach (Recipe recipe in @Model["recipes"])
+        {
+          @Html.ActionLink($"{recipe.Name}", "Details", "Recipies", new {id = recipe.RecipeId})
+          <br>
+        }
+      </ul>
+    }
+
+  </div>
+
+</main>
+<br>
+<br>
+
+
+<!-- @Html.ActionLink("See all recipies", "Index", "Recipies", new {style = "color:white"})
+@Html.ActionLink("See all categories", "Index", "Categories", new {style = "color:white"})
+@Html.ActionLink("Create an account", "Index", "Account", new {style = "color:white"}) -->
+
+<div id="action">
+  @Html.ActionLink("See all recipies", "Index", "Recipies", null, new { @class="btn btn-primary"})
+  @Html.ActionLink("See all categories", "Index", "Categories", null, new { @class="btn btn-primary"})
+  @Html.ActionLink("Create an account", "Index", "Account", null, new { @class="btn btn-primary"})
+</div>
